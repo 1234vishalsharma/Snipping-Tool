@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Button</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        #floating-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+            background-color: yellow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        #floating-button span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="floating-button" onclick="handleClick()">
+        <span>+</span>
+    </div>
+    <script>
+        function handleClick() {
+            alert('Floating button clicked!');
+        }
+    </script>
+</body>
+</html>

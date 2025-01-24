@@ -1,8 +1,6 @@
-
 .selection-box {
-    position: absolute;
-    border: 2px dashed #000; 
-    background-color: rgba(0, 0, 0, 0.2); 
-    pointer-events: none; 
-  }
-  
+  position: absolute;
+  border: 2px dashed #000; /* Visible dashed border */
+  background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+  pointer-events: none; /* Ensure it doesn't interfere with mouse events */
+}

@@ -1,5 +1,5 @@
 import "./App.css";
-import html2canvas from "html2canvas";
+import html2canvas from 'html2canvas-pro';
 
 import { useState } from "react";
 function App() {
@@ -8,9 +8,9 @@ function App() {
     setbtnHide(true);
     const mainContent = document.body;
     document.body.style.cursor = "crosshair";
-    let startX: any, startY: any, endX: any, endY: any, selectionBox: any;
+    let startX, startY, endX, endY, selectionBox;
 
-    function onMouseMove(e: any) {
+    function onMouseMove(e) {
       e.preventDefault();
       endX = e.clientX;
       endY = e.clientY;
@@ -24,7 +24,7 @@ function App() {
       selectionBox.style.top = `${Math.min(startY, endY)}px`;
     }
     
-    function onMouseDown(e: any){
+    function onMouseDown(e){
       e.preventDefault();
       startX = e.clientX;
       startY = e.clientY;
@@ -52,15 +52,13 @@ function App() {
     
       if (selectionBox) {
         const rect = selectionBox.getBoundingClientRect();
-    
         html2canvas(document.body, {
           x: rect.left,
           y: rect.top,
           width: rect.width,
           height: rect.height,
-        }).then((canvas: any) => {
+        }).then((canvas) => {
           const image = canvas.toDataURL("image/png");
-          console.log("Captured Image:", image);
     
           const link = document.createElement("a");
           link.href = image;
@@ -72,7 +70,7 @@ function App() {
           selectionBox.remove();
           selectionBox = null;
           document.body.style.cursor = "default";
-        }).catch((e: any) => {
+        }).catch((e) => {
           // Cleanup
           setbtnHide(false);
           selectionBox.remove();
